@@ -17,20 +17,24 @@
                 </view>
             </view>
         </view>
-        <view style="margin-top: 60px;display: flex;flex-direction: row;" class="flex_sa">
+        <view style="margin-top: 60px;display: flex;flex-direction: row;justify-content: space-between;margin:60rpx 20rpx;">
             <text style="font-size: 50rpx">预警记录:</text>
-            <block wx:for="{{alertTime}}" wx:key="index">
-                <view>当前项的索引为 {{index}}</view>
-                <view>当前项的值为 {{item}}</view>
-            </block>
+            <view>
+                <block wx:for="{{alertTime}}" wx:key="index">
+                    <view>预警:{{item.warningInfo}}</view>
+                    <view style="margin-bottom:20rpx">时间:{{item.updatedTime}}</view>
+                 </block>
+            </view>
             <!-- <text style="font-size: 18px;height: 28px;line-height: 28px;margin-left: 5px;margin-top: 5px;">{{alertTime||'-'}}</text> -->
         </view>
-        <view style="margin-top: 60px;display: flex;flex-direction: row;" class="flex_sa">
+        <view style="margin-top: 60px;display: flex;flex-direction: row;justify-content: space-between;margin:60rpx 20rpx;">
             <text style="font-size: 50rpx;">呼叫记录:</text>
-            <block wx:for="{{callTime}}" wx:key="index">
-                <view>当前项的索引为 {{index}}</view>
-                <view>当前项的值为 {{item}}</view>
-            </block>
+            <view>
+                <block wx:for="{{callTime}}" wx:key="index">
+                    <view>呼叫人:{{item.createdBy||'-'}}</view>
+                    <view>号码:{{item.contactPhone||'-'}}</view>
+                </block>
+            </view>
             <!-- <text style="font-size: 18px;height: 28px;line-height: 28px;margin-left: 5px;margin-top: 5px;">{{callTime||'-'}}</text> -->
         </view>
     </view>

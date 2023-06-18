@@ -81,18 +81,7 @@ Page({
             Info_Circle_Radius: info.windowWidth / 2,
         });
     },
-
-    GetFunctionCurveValue(value) {
-        if (value == -60)
-            return 0;
-        let ret = 100 - 6000 / (value + 60);
-        return (ret > 0 ? ret : 0) / 2;
-    },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
+    loadingSvg(){
         const query = wx.createSelectorQuery()
         query.select('#MainCanvas')
             .fields({
@@ -116,6 +105,7 @@ Page({
                 });
 
                 const renderLoop = () => {
+                    console.log(this.data.Score,'22321321')
                     this.DrawMainArea(ctx);
                     if (this.data._score < this.data.Score) {
                         this.data._score++;
@@ -135,9 +125,46 @@ Page({
             });
     },
 
+    GetFunctionCurveValue(value) {
+        if (value == -60)
+            return 0;
+        let ret = 100 - 6000 / (value + 60);
+        return (ret > 0 ? ret : 0) / 2;
+    },
+
+    /**
+     * 生命周期函数--监听页面初次渲染完成
+     */
+    onReady: function () {
+        let that = this
+        const token = wx.getStorageSync('token')
+        const oldmanId = wx.getStorageSync('oldmanId')
+
+        wx.request({
+            url: 'https://38m89829d7.zicp.fun/ucenter/oldman/situation',
+            method: 'GET',
+            data: {
+                oldmanId
+            },
+            header: {
+                'X-Token': token,
+                'content-type': 'application/json'
+            },
+            success: function (res) {
+                console.log(res.data.synthesis,'222222')
+                that.setData({
+                    Score:Math.abs(res.data.synthesis)
+                });
+                that.loadingSvg()
+            },
+        });
+        
+    },
+
     // 处理触摸事件
 
     handleTouchStart: function (e) {
+        console.log(e,'eeee')
         const touchX = e.touches[0].x
         const touchY = e.touches[0].y
         if (touchX < 110 && touchY < 600) {
@@ -146,7 +173,9 @@ Page({
                 url: '/pages/bloodpressure/bloodpressure',
             })
         }
-        if ((150 < touchX) && touchY < 670 && touchX < 230) {
+        console.log(touchY,'touchY')
+        console.log
+        if ((touchX <230) && (touchY > 300 )) {
             console.log(222)
             wx.navigateTo({
                 url: '/pages/heartrate/heartrate',
@@ -524,22 +553,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
-        let that = this
-        wx.request({
-            url: 'https://38m89829d7.zicp.fun//ucenter/oldman/situation',
-            method: 'GET',
-            data: {
-                oldmanId:'1'
-            },
-            header: {
-                'content-type': 'application/json'
-            },
-            success: function (res) {
-                that.setData({
-                    Score:res.data.synthesis||0
-                });
-            },
-        });
+       
     },
 
     /**

@@ -7,10 +7,14 @@ Page({
     data: {
         verificationCodeUrl:'',
         phoneNumberInput: '',
-        passwordInput: '',
         content: '',
         qrTxt: 'https://github.com/liuxdi/wx-qr',
-        qrcodeUrl: null
+        qrcodeUrl: null,
+        mobile:'',
+        passwordInput: '',
+        VerificationCode:'',
+        code:'',
+
     },
     /**
      * 生命周期函数--监听页面加载
@@ -78,24 +82,33 @@ Page({
         return '#' + Math.random().toString(16).substr(2, 6);
     },
     onButtonClick() {
-        if (this.data.code === Number(this.data.passwordInput)) {
+        if (this.data.code === Number(this.data.VerificationCode)) {
             wx.request({
                 url: 'https://38m89829d7.zicp.fun/ucenter/user/register',
                 method: 'POST',
                 data:{
-                    mobile:this.data.phoneNumberInput,
-                    passWord:this.data.passwordInput
+                    mobile:this.data.mobile,
+                    passWord:this.data.passwordInput,
+                    realName:this.data.mobile,
+                    userCode:this.data.mobile,
                 },
                 success: function(res) {
+                    console.log(res,'res')
+                    wx.setStorage({key:'userId',data:res.data.data.user?.userId||'1'})
                     wx.showToast({
                         icon:'none',
                         title: res.data.message||'操作成功',
-                        duration: 1000
+                        duration: 2000
                     });
-                    wx.navigateTo({
-                        url: '/pages/familyormedicalworkers/familyormedicalworks?id=1'
-                    })
-                  console.log(res.data);
+                    if(res.data.code===200){
+                        wx.setStorage({key:'token',data:`Bearer ${res.data.data.token.token}`})
+
+                        setTimeout(()=>{
+                            wx.navigateTo({
+                                url: '/pages/familyormedicalworkers/familyormedicalworks'
+                            })
+                        },1000)
+                    }
                 },
               });
         } else {

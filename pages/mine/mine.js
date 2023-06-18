@@ -1,4 +1,5 @@
 // pages/mine/mine.js
+import moment from 'moment'
 Page({
 
     /**
@@ -26,36 +27,57 @@ Page({
     },
     callHistory(){
         let that = this
+        const token = wx.getStorageSync('token')
+        const oldmanId = wx.getStorageSync('oldmanId')
+
         wx.request({
             url: 'https://38m89829d7.zicp.fun/ucenter/oldman/callHistory',
             method: 'GET',
             data: {
-                oldmanId:'1'
+                oldmanId
             },
             header: {
+                'X-Token': token,
                 'content-type': 'application/json'
             },
             success: function (res) {
+                const list = res.data.map(item=>{
+                    return{
+                        ...item,
+                        updatedTime:moment(item.updatedTime).format('YYYY-DD-MM')
+                    }
+                })
                 that.setData({
-                    callTime:[]
+                    callTime:list
                 });
             },
         });
     },
     warningHistory(){
         let that = this
+        const token = wx.getStorageSync('token')
+        const oldmanId = wx.getStorageSync('oldmanId')
+
         wx.request({
             url: 'https://38m89829d7.zicp.fun/ucenter/oldman/warningHistory',
             method: 'GET',
             data: {
-                oldmanId:'1'
+                oldmanId
             },
             header: {
+                'X-Token': token,
                 'content-type': 'application/json'
             },
             success: function (res) {
+                console.log(res,'2321321')
+                const list = res.data.map(item=>{
+                    return{
+                        ...item,
+                        updatedTime:moment(item.updatedTime).format('YYYY-DD-MM')
+                    }
+                })
                 that.setData({
-                    alertTime:[]
+                    alertTime:list
                 });
             },
         });
@@ -66,20 +88,23 @@ Page({
      */
     onShow() {
         let that = this
+        const token = wx.getStorageSync('token')
+        const oldmanId = wx.getStorageSync('oldmanId')
+        const userId = wx.getStogetStoragerageSync('userId')
         wx.request({
-            url: 'https://38m89829d7.zicp.fun//ucenter/oldman/situation',
+            url: `https://38m89829d7.zicp.fun/ucenter/user/${userId}`,
             method: 'GET',
-            data: {
-                oldmanId:'1'
-            },
             header: {
+                'X-Token': token,
                 'content-type': 'application/json'
             },
             success: function (res) {
+                const {data} = res.data
+                console.log(data,'data')
                 that.setData({
-                    value:0
+                    name:data.user.realName||'-',
+                    age:data.user.age||0
                 });
-                console.log(res.data,'血压')
             },
         });
         this.callHistory()

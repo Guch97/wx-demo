@@ -18,8 +18,10 @@ Page({
     },
     onButtonClick(){
         console.log(this.data,'data')
+        const token = wx.getStorageSync('token')
+        const userId = wx.getStorageSync('userId')
         wx.request({
-            url: `https://38m89829d7.zicp.fun/ucenter/user/update/${this.data.id}`,
+            url: `https://38m89829d7.zicp.fun/ucenter/user/update/${userId}`,
             method: 'POST',
             data:{
                 realName:this.data.realName,
@@ -32,17 +34,23 @@ Page({
                     medical_history:this.data.medical_history,
                 }
             },
+            header: {
+                'X-Token': token,
+                'content-type': 'application/json'
+            },
             success: function(res) {
                 wx.showToast({
                     icon:'none',
                     title: res?.data.message,
                     duration: 2000
                 });
-                if(res.code===200){
+            setTimeout(()=>{
+                if(res.data.code===200){
                     wx.navigateTo({
-                        url: '/pages/login/login.js'
+                        url: '/pages/login/login'
                     })
                 }
+            },1000)
             },
           });
     },
@@ -51,8 +59,8 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
+        console.log(options,'options')
         this.setData({
-            id:options.id,
             identity:options.identity
         })
     },

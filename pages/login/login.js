@@ -80,13 +80,14 @@ Page({
     },
 
     onConfirm: function () {
+
+
         if (this.UserInfoVerify()) {
+            
             wx.request({
                 url: 'https://38m89829d7.zicp.fun/login',
                 method: 'POST',
                 data: {
-                    realName:this.data.phoneNumberInput,
-                    nonceStr: 111,
                     passWord: this.data.passwordInput,
                     userName: this.data.phoneNumberInput
                 },
@@ -100,9 +101,16 @@ Page({
                         duration: 2000
                     });
                     if(res.data.code===200){
-                        wx.navigateTo({
-                            url: '../mainInfo/mainInfo'
-                        });
+                        const {data} = res.data
+                        wx.setStorage({key:'token',data:`Bearer ${res.data.data.token.token}`})
+                        wx.setStorage({key:'oldmanId',data:data.user.user.oldmanId||'3'})
+                        wx.setStorage({key:'userId',data:data.user.user.userId||'9'})
+                        wx.setStorage({key:'userInfo',data:data.user.user})
+                        setTimeout(()=>{
+                            wx.navigateTo({
+                                url: '../mainInfo/mainInfo'
+                            });
+                        },1000)
                     }
                 },
             });

@@ -5,7 +5,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        synthesis: 0,
+        address: '浙江金华兰溪'
     },
 
     /**
@@ -26,7 +27,50 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
+        let that = this
+        const token = wx.getStorageSync('token')
+        const oldmanId = wx.getStorageSync('oldmanId')
 
+        wx.request({
+            url: 'https://38m89829d7.zicp.fun/ucenter/oldman/situation',
+            method: 'GET',
+            data: {
+                oldmanId
+            },
+            header: {
+                'X-Token': token,
+                'content-type': 'application/json'
+            },
+            success: function (res) {
+                that.setData({
+                    synthesis: Math.abs(res.data?.synthesis)
+                });
+                console.log(res.data, '综合报告')
+            },
+        });
+
+        wx.getLocation({
+            type: 'wgs84',
+            success: function (res) {
+                console.log(res, '222')
+                var lat = res.latitude;
+                var lng = res.longitude;
+                wx.request({
+                    url: 'https://apis.map.qq.com/ws/geocoder/v1/',
+                    data: {
+                        location: lat + ',' + lng,
+                        key: 'YANBZ-WKARL-VQKPX-MXYZB-5VO6V-JYFFP',
+                        get_poi: 1
+                    },
+                    success: function (res) {
+                        var address = res.data.result.address;
+                        that.setData({
+                            address: address ? address :'浙江金华兰溪'
+                        })
+                    }
+                })
+            }
+        })
     },
 
     /**

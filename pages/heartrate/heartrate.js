@@ -27,13 +27,17 @@ Page({
      */
     onShow() {
         let that = this
+        const token = wx.getStorageSync('token')
+        const oldmanId = wx.getStorageSync('oldmanId')
+
         wx.request({
-            url: 'https://38m89829d7.zicp.fun//ucenter/oldman/situation',
+            url: 'https://38m89829d7.zicp.fun/ucenter/oldman/situation',
             method: 'GET',
             data: {
-                oldmanId:'1'
+                oldmanId
             },
             header: {
+                'X-Token': token,
                 'content-type': 'application/json'
             },
             success: function (res) {

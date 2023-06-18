@@ -33,7 +33,7 @@
             </view>
     
         </view>
-        <button bindtap="onButtonClick"  open-type="navigate"   style="background-color: #F1F1F1;width: 150px;text-align: center;margin-top: 60px;font-size: 20px;background-color: ghostwhite;" >确定</button>
+        <button bindtap="onButtonClick"    style="background-color: #F1F1F1;width: 150px;text-align: center;margin-top: 60px;font-size: 20px;background-color: ghostwhite;" >确定</button>
     </view>
     
 </view>
