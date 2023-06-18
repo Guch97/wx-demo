@@ -1,0 +1,28 @@
+/* pages/register/register.wxss */
+
+.container{
+    width: 750rpx;
+    height: 1450rpx;
+
+    z-index: 0;
+}
+
+.backgroundImage{
+    position: absolute;
+    width: 100%;
+    height: 100%;  
+    z-index: 0;
+}
+
+.inputs{
+    width: 750rpx;
+    height: 70%;
+    z-index: 1;
+}
+
+
+.btn-wrapper{
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%)
+}

@@ -1,0 +1,19 @@
+<view class="container">
+    <image class="backgroundImage" src="../../Resources/BackGround.png"></image>
+    <view class="inputs">
+        <view style="text-align: center;font-size: 25px;">请选择你的身份</view>
+        <view style="display: flex;flex-direction: row;margin-left: 20px;margin-top: 60px;">
+            <navigator open-type="navigate" url="../family/familyregister" style="display: flex;flex-direction: column;">
+                <image style="width: 120px;height: 120px;margin-left: 50px;padding-top: 50px;" src="../../Resources/map_icon.png" mode=""/>
+                <view style="margin-left: 90px;margin-top: 30px;font-size: 20px;">家属</view>
+            </navigator>
+            <view style="display: flex;flex-direction: column;">
+                
+                <navigator open-type="navigate" url="../medicalworkers/medicalworkers">
+                    <image style="width: 120px;height: 120px;margin-left: 50px;padding-top: 50px;" src="../../Resources/map_icon.png" mode=""/>
+                    <view style="margin-left: 70px;margin-top: 30px;font-size: 20px;">社区医护</view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>

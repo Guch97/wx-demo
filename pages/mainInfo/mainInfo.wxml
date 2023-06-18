@@ -1,0 +1,14 @@
+<!--pages/mainInfo/mainInfo.wxml-->
+<view style="position:relative; width: 100%; height: 1449rpx">
+    <canvas type="2d" id="MainCanvas" style="width: 100%; height: 100%;z-index: 1;" bindlongtap="OnLongTap"
+    bindtouchstart="handleTouchStart"
+    bindtouchend="handleTouchEnd">
+        <image 
+        class='map-icon' 
+        src='../../Resources/map_icon.png' 
+        style="position: relative; left: {{map_icon_X}}px; top: {{map_icon_Y}}px; width: {{map_icon_size}}px; height: {{map_icon_size}}px;z-index: 0;">
+        </image>
+    </canvas>
+    
+</view>
+<navigator open-type="navigate" url="../mine/mine" class="my-icon" style="margin-top: 120px;">我的</navigator>

@@ -1,0 +1,39 @@
+<!--pages/medicalworkers/medicalworkers.wxml-->
+<view class="container">
+    <image class="backgroundImage" src="../../Resources/BackGround.png"></image>
+    <view class="inputs">
+        <view style="display: flex; flex-direction: row; height: 100rpx; padding: 10px; margin: 10px; width: 712rpx; box-sizing: border-box">
+            <view style="background-color: #F1F1F1; width: 210rpx; height: 62rpx; display: block; box-sizing: border-box">
+                <text style="position: relative; line-height: 60rpx; left: 18rpx; top: 0rpx;font-size: 15px;">本人姓名</text>
+            </view>
+            <view style="background-color: #E6E6E6; width: 500rpx; height: 62rpx; display: block; box-sizing: border-box">
+                <input style="position: relative; width: 380rpx; height: 60rpx; display: block; box-sizing: border-box; left: 31rpx; top: 0rpx" class="phoneNumberInput" maxlength="11" bindinput="onPhoneNumberInput" placeholder="  Name" />
+            </view>
+    
+        </view>
+
+
+        <view style="display: flex; flex-direction: row; height: 100rpx; padding: 10px; margin: 10px; width: 712rpx; box-sizing: border-box">
+            <view style="background-color: #F1F1F1; width: 210rpx; height: 62rpx; display: block; box-sizing: border-box">
+                <text style="position: relative; line-height: 60rpx; left: 18rpx; top: 0rpx;font-size: 15px;">本人身份证</text>
+            </view>
+            <view style="background-color: #E6E6E6; width: 500rpx; height: 62rpx; display: block; box-sizing: border-box">
+                <input style="position: relative; width: 380rpx; height: 60rpx; display: block; box-sizing: border-box; left: 31rpx; top: 0rpx" class="phoneNumberInput" maxlength="11" bindinput="onPhoneNumberInput" placeholder="  Identity Card" />
+            </view>
+    
+        </view>
+
+
+        <view style="display: flex; flex-direction: row; height: 100rpx; padding: 10px; margin: 10px; width: 712rpx; box-sizing: border-box">
+            <view style="background-color: #F1F1F1; width: 210rpx; height: 62rpx; display: block; box-sizing: border-box">
+                <text style="position: relative; line-height: 60rpx; left: 18rpx; top: 0rpx;font-size: 15px;">工作单位</text>
+            </view>
+            <view style="background-color: #E6E6E6; width: 500rpx; height: 62rpx; display: block; box-sizing: border-box">
+                <input style="position: relative; width: 380rpx; height: 60rpx; display: block; box-sizing: border-box; left: 31rpx; top: 0rpx" class="phoneNumberInput" maxlength="11" bindinput="onPhoneNumberInput" placeholder="  Work Unit" />
+            </view>
+    
+        </view>
+        <navigator open-type="navigate" url="../login/login" style="background-color: #F1F1F1;width: 150px;text-align: center;margin-left: 140px;margin-top: 60px;height: 35px;line-height: 35px;font-size: 20px;background-color: ghostwhite;" >确定</navigator>
+    </view>
+    
+</view>

@@ -1,0 +1,42 @@
+<!--pages/healthreport/healthreport.wxml-->
+<view class="container">
+    <image class="backgroundImage" src="../../Resources/BackGround.png"></image>
+    <view class="inputs">
+        <view style="display: flex; flex-direction: row; height: 100rpx; padding: 10px; margin: 10px; width: 712rpx; box-sizing: border-box;margin-top: 80px;">
+            <view style=" width: 310rpx; height: 62rpx; display: block; box-sizing: border-box;margin-left: 20px;">
+                <text style="position: relative; line-height: 60rpx; left: 18rpx; top: 0rpx;font-size: 25px;">综合评分:</text>
+            </view>
+            <view style=" width: 500rpx; height: 62rpx; display: block; box-sizing: border-box">
+                <text style="position: relative; width: 380rpx; height: 60rpx; display: block; box-sizing: border-box; left: 30rpx; top: 0rpx;font-size: 25px;" class="phoneNumberInput" maxlength="11" bindinput="onPhoneNumberInput" placeholder="  Name" >100</text>
+            </view>
+    
+        </view>
+
+        <view style="display: flex; flex-direction: row; height: 100rpx; padding: 10px; margin: 10px; width: 712rpx; box-sizing: border-box;margin-top: 30px;">
+            <view style=" width: 310rpx; height: 62rpx; display: block; box-sizing: border-box;margin-left: 20px;">
+                <text style="position: relative; line-height: 60rpx; left: 18rpx; top: 0rpx;font-size: 25px;">历史轨迹:</text>
+            </view>
+            <view style=" width: 500rpx; height: 62rpx; display: block; box-sizing: border-box">
+                <text style="position: relative; width: 380rpx; height: 60rpx; display: block; box-sizing: border-box; left: 30rpx; top: 10rpx;font-size: 18px;" class="phoneNumberInput" maxlength="11" bindinput="onPhoneNumberInput">浙江省金华市兰溪市</text>
+            </view>
+    
+        </view>
+
+        <view style="display: flex; flex-direction: row; height: 100rpx; padding: 10px; margin: 10px; width: 712rpx; box-sizing: border-box;margin-top: 30px;">
+            <view style=" width: 310rpx; height: 62rpx; display: block; box-sizing: border-box;margin-left: 20px;">
+                <text style="position: relative; line-height: 60rpx; left: 18rpx; top: 0rpx;font-size: 25px;">实时数据:</text>
+            </view>
+            <view style=" width: 500rpx; height: 62rpx; display: block; box-sizing: border-box">
+                <text style="position: relative; width: 380rpx; height: 60rpx; display: block; box-sizing: border-box; left: 30rpx; top: 0rpx;font-size: 25px;" class="phoneNumberInput" maxlength="11" bindinput="onPhoneNumberInput" placeholder="  Name" >----</text>
+            </view>
+    
+        </view>
+        <view style="display: flex; flex-direction: row; height: 100rpx; padding: 10px; margin: 10px; width: 712rpx; box-sizing: border-box;margin-top: 50px;">
+            <view style=" width: 500rpx; height: 62rpx; display: block; box-sizing: border-box;margin-left: 20px;">
+                <text style="position: relative; line-height: 60rpx; left: 100rpx; top: 0rpx;font-size: 20px;">(eq.网易云年度报告单)</text>
+            </view>
+            
+    
+        </view>
+    </view>
+</view>

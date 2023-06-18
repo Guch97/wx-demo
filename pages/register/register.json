@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+      "qr-container": "wx-qr"
+    },
+    
+        "navigationBarTitleText": "注册"
+      
+  }

@@ -1,0 +1,7 @@
+/* pages/mainInfo/mainInfo.wxss */
+.my-icon{
+    position: absolute;
+    z-index: 9999;
+    top: 75%;
+    right:10%;
+}

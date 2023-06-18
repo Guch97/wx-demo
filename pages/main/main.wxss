@@ -1,0 +1,118 @@
+/* pages/main/main.wxss */
+.container{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.backGroundImage{
+    position: absolute;
+    width: 100%;
+    height: 100%;  
+    z-index: 0;
+}
+
+.buttons{
+    position: absolute;
+    width: 100%;
+    height: 300rpx;
+    z-index: 1;
+    top: 53%;
+}
+
+.title{
+    position: relative;
+    width: 100%;
+    height: 300rpx;
+    z-index: 1;
+    top: 53%;
+}
+
+.titleText-1{
+
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+    font-size: 130rpx;
+    font-weight: 600;
+
+    z-index: 3;
+
+    color: #0f0f0f;
+}
+
+.titleText-2{
+
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+    font-size: 130rpx;
+    font-weight: 600;
+
+    z-index: 3;
+
+    color: #f1d45d;
+}
+
+.titleText-3{
+    z-index: 4;
+    column-count: 100;
+}
+
+.loginButton{
+    color: #e1a52b;
+    background-color: #fee6b8;
+    box-shadow: 30rpx,30rpx,30rpx,30rpx gray;
+    left: 0rpx; 
+    top: rpx;
+    height: 180rpx;
+
+    line-height: 100rpx; 
+    box-shadow: 5rpx 10rpx 15rpx 5rpx #ebc57aa8;
+    /*===============border===============*/
+    border-radius: 40rpx;
+    border-style: solid;
+    border-color: #ebc477;
+
+    z-index: 3;
+}
+
+.loginButtonImage{
+    position: relative;
+    width: 240rpx;
+    height: 110rpx;
+    z-index: 2;
+}
+
+.registerButton{
+    color: #6b9ae2;
+    background-color:#a8c7fd;
+    box-shadow: 30rpx,30rpx,30rpx,30rpx gray;
+    left: 0rpx; 
+    top: 20%;
+
+    line-height: 50rpx; 
+    box-shadow: 5rpx 10rpx 15rpx 5rpx #d8e1e6;
+    /*===============border===============*/
+    border-radius: 20rpx;
+    border-style: solid;
+    border-color: #c9d9fa;
+
+    z-index: 3;
+}
+
+.registerButtonImage{
+    position: relative;
+    width: 140rpx;
+    height: 60rpx;
+    z-index: 2;
+}
+
+.titleIcon{
+    position: relative;
+    width: 140rpx;
+    height: 140rpx;
+    z-index: 3;
+}
+
+
+

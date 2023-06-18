@@ -1,0 +1,29 @@
+<!--pages/mine/mine.wxml-->
+<view class="container">
+    <image class="backgroundImage" src="../../Resources/BackGround.png"></image>
+    <view class="inputs" >
+        <view style="display: flex; flex-direction: row;margin-top: 50px;">
+            <view>
+                <image src="../../Resources/icon.png" style="width: 120px;height: 120px;margin-left: 60px;"></image>
+            </view>
+            <view style="display: flex;flex-direction: column;margin-top: 10px;">
+                <view style="margin-left: 20px;">
+                <text style="font-size: 25px;">姓名：</text>
+                <text style="font-size: 25px;">张三</text>
+                </view>
+                <view style="margin-left: 20px;margin-top: 30px;">
+                <text style="font-size: 25px;">年龄：</text>
+                <text style="font-size: 25px;">28</text>
+                </view>
+            </view>
+        </view>
+        <view style="margin-left: 50px;margin-top: 80px;display: flex;flex-direction: row;">
+            <text style="font-size: 25px;">预警记录:</text>
+            <text style="font-size: 18px;height: 28px;line-height: 28px;margin-left: 5px;margin-top: 5px;">2023/06/06 17：08</text>
+        </view>
+        <view style="margin-left: 50px;margin-top: 60px;display: flex;flex-direction: row;">
+            <text style="font-size: 25px;">呼叫记录:</text>
+            <text style="font-size: 18px;height: 28px;line-height: 28px;margin-left: 5px;margin-top: 5px;">2023/06/06 17：08</text>
+        </view>
+    </view>
+</view>

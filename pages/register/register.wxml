@@ -1,0 +1,46 @@
+<!--pages/register/register.wxml-->
+<view class="container">
+    <image class="backgroundImage" src="../../Resources/BackGround.png"></image>
+    <view class="inputs">
+        <view style="display: flex; flex-direction: row; height: 100rpx; padding: 10px; margin: 10px; width: 712rpx; box-sizing: border-box">
+            <view style="background-color: #F1F1F1; width: 125rpx; height: 62rpx; display: block; box-sizing: border-box">
+                <text style="position: relative; line-height: 60rpx; left: 18rpx; top: 0rpx">手机号</text>
+            </view>
+            <view style="background-color: #E6E6E6; width: 551rpx; height: 62rpx; display: block; box-sizing: border-box">
+                <input style="position: relative; width: 485rpx; height: 60rpx; display: block; box-sizing: border-box; left: 31rpx; top: 0rpx" class="phoneNumberInput" maxlength="11" bindinput="onPhoneNumberInput" placeholder="  Phone Number" />
+            </view>
+
+        </view>
+        <view style="display: flex; flex-direction: row; height: 100rpx; padding: 10px; margin: 10px; width: 712rpx; box-sizing: border-box">
+            <view style="background-color: #F1F1F1; width: 125rpx; height: 62rpx; display: block; box-sizing: border-box">
+                <text style="position: relative; line-height: 60rpx; left: 18rpx; top: 0rpx">密码</text>
+            </view>
+            <view style="background-color: #E6E6E6; width: 551rpx; height: 62rpx; display: block; box-sizing: border-box">
+                <input style="position: relative; width: 485rpx; height: 60rpx; display: block; box-sizing: border-box; left: 31rpx; top: 0rpx" class="phoneNumberInput" bindinput="onPasswordInput" placeholder="  Password" />
+            </view>
+
+        </view>
+
+
+
+
+        <view style="display: flex; flex-direction: row; height: 100rpx; padding: 10px; margin: 10px; width: 612rpx; box-sizing: border-box">
+            <view style="background-color: #F1F1F1; width: 125rpx; height: 64rpx; display: block; box-sizing: border-box">
+                <text style="position: relative; left: 15rpx; top: 13rpx">验证码</text>
+            </view>
+            <view style="background-color: #E6E6E6; flex: 1;height: 64rpx;">
+                <input style="position: relative; width: 150rpx; height: 64rpx; display: block; box-sizing: border-box; left: 31rpx; top: 0rpx;border-bottom: 2px;" class="phoneNumberInput" bindinput="onPasswordInput" placeholder="  Verification Code" />
+            </view>
+            <!-- <view style="background-color: #F1F1F1; width: 125rpx; height: 62rpx; display: block; box-sizing: border-box">
+                <button size="mini" style="position: relative; left: 16rpx; top: 6rpx; font-size: smaller; background-color: #F1F1F1">发送</button>
+            </view> -->
+            <view>
+                <canvas canvas-id="verification-code" style="width: 90px; height: 64px;" binderror="onCanvasError"></canvas>
+            </view>
+        </view>
+        <button bindtap="onButtonClick" class="btn-wrapper" style="margin-top: 100px;">确定
+        </button>
+        <!-- <navigator open-type="navigate" url="../familyormedicalworkers/familyormedicalworks" style="background-color: #F1F1F1;width: 70px;text-align: center;margin-left: 120px;">确定</navigator> -->
+    </view>
+    
+</view>

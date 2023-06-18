@@ -1,0 +1,27 @@
+{
+    "pages": [
+        "pages/main/main",
+        "pages/mainInfo/mainInfo",
+        "pages/register/register",
+        "pages/index/index",
+        "pages/login/login",
+        "pages/logs/logs",
+        "pages/familyormedicalworkers/familyormedicalworks",
+        "pages/family/familyregister",
+        "pages/medicalworkers/medicalworkers",
+        "pages/healthreport/healthreport",
+        "pages/mine/mine",
+        "pages/heartrate/heartrate",
+        "pages/bloodpressure/bloodpressure",
+        "pages/bodytemperature/bodytemperature"
+    ],
+    "window": {
+        "enablePullDownRefresh": true,
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,21 @@
+/* pages/mine/mine.wxss */
+.backgroundImage{
+    position: absolute;
+    width: 100%;
+    height: 100%;  
+    z-index: 0;
+}
+
+.inputs{
+    width: 750rpx;
+    height: 70%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+.container{
+    width: 750rpx;
+    height: 1450rpx;
+
+    z-index: 0;
+}

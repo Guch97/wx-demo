@@ -1,0 +1,27 @@
+<!--pages/main/main.wxml-->
+<view class="container">
+    <image class = "backGroundImage" src = "../../Resources/BackGround.png"></image>
+    <view class="buttons">
+        <button class="loginButton" bindtap="OnLoginButtonClick">
+            <image class="loginButtonImage" src='../../Resources/loginButtonImage.png' style="position: relative; left: 0rpx; top: 14rpx"></image>
+        </button>
+        <button class="registerButton" style="width: 233rpx; height: 81rpx; display: block; box-sizing: border-box; left: 0rpx; top: 60rpx" bindtap="OnRegisterButtonClick">
+            <image class="registerButtonImage" src='../../Resources/registerButtonImage.png' style="position: relative; left: 0rpx; top: -8rpx"></image>
+        </button>
+    </view>
+    <view class="title" style="position: relative; left: 0rpx; top: 319rpx">
+        <image class="titleIcon" src="../../Resources/icon.png" style="position: relative; left: 241rpx; top: 79rpx"></image>
+    
+        <text class="titleText-1" style="position: relative; left: -30rpx; top: 56rpx">爱</text>
+        <text class="titleText-2" style="position: relative; left: 110rpx; top: 56rpx">陪伴</text>
+    
+        <view style="position: relative; height: 53rpx; width: 750rpx; display: block; box-sizing: border-box; left: 0rpx; top: 75rpx">
+            <text style="position: relative; top: -17rpx; left: 241rpx">关爱保护每一位老人</text>
+            </view>
+        </view>
+</view>
+
+
+
+
+
