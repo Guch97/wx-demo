@@ -17,11 +17,11 @@ Page({
         medical_history:'',
     },
     onButtonClick(){
-        console.log(this.data,'data')
+        var app = getApp();
         const token = wx.getStorageSync('token')
         const userId = wx.getStorageSync('userId')
         wx.request({
-            url: `https://38m89829d7.zicp.fun/ucenter/user/update/${userId}`,
+            url: `${app.globalData.baseApi}/ucenter/user/update/${userId}`,
             method: 'POST',
             data:{
                 realName:this.data.realName,

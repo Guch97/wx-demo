@@ -83,8 +83,9 @@ Page({
     },
     onButtonClick() {
         if (this.data.code === Number(this.data.VerificationCode)) {
+            var app = getApp();
             wx.request({
-                url: 'https://38m89829d7.zicp.fun/ucenter/user/register',
+                url: app.globalData.baseApi+'/ucenter/user/register',
                 method: 'POST',
                 data:{
                     mobile:this.data.mobile,

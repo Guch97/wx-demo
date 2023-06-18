@@ -1,3 +1,7 @@
+/*
+ * @Author: xs
+ * @Date: 2023-06-18 20:53:46
+ */
 // pages/login/login.js
 // import {login} from '../../request/index'
 // const login =  require('../../request/index.js')
@@ -66,26 +70,21 @@ Page({
     onShareAppMessage: function () {
 
     },
-
     onPhoneNumberInput: function (e) {
         this.setData({
             phoneNumberInput: e.detail.value
         })
     },
-
     onPasswordInput: function (e) {
         this.setData({
             passwordInput: e.detail.value
         })
     },
-
     onConfirm: function () {
-
-
         if (this.UserInfoVerify()) {
-            
+            var app = getApp();
             wx.request({
-                url: 'https://38m89829d7.zicp.fun/login',
+                url: app.globalData.baseApi+'/login',
                 method: 'POST',
                 data: {
                     passWord: this.data.passwordInput,

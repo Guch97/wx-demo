@@ -29,9 +29,10 @@ Page({
         let that = this
         const token = wx.getStorageSync('token')
         const oldmanId = wx.getStorageSync('oldmanId')
+        var app = getApp();
 
         wx.request({
-            url: 'https://38m89829d7.zicp.fun/ucenter/oldman/callHistory',
+            url: app.globalData.baseApi+'/ucenter/oldman/callHistory',
             method: 'GET',
             data: {
                 oldmanId
@@ -57,9 +58,10 @@ Page({
         let that = this
         const token = wx.getStorageSync('token')
         const oldmanId = wx.getStorageSync('oldmanId')
+        var app = getApp();
 
         wx.request({
-            url: 'https://38m89829d7.zicp.fun/ucenter/oldman/warningHistory',
+            url: app.globalData.baseApi+'/ucenter/oldman/warningHistory',
             method: 'GET',
             data: {
                 oldmanId
@@ -89,10 +91,11 @@ Page({
     onShow() {
         let that = this
         const token = wx.getStorageSync('token')
-        const oldmanId = wx.getStorageSync('oldmanId')
-        const userId = wx.getStogetStoragerageSync('userId')
+        var app = getApp();
+
+        const userId = wx.getStorageSync('userId')
         wx.request({
-            url: `https://38m89829d7.zicp.fun/ucenter/user/${userId}`,
+            url: `${app.globalData.baseApi}/ucenter/user/${userId}`,
             method: 'GET',
             header: {
                 'X-Token': token,
@@ -102,7 +105,7 @@ Page({
                 const {data} = res.data
                 console.log(data,'data')
                 that.setData({
-                    name:data.user.realName||'-',
+                    name:data.user.realName||data.user.userCode||'-',
                     age:data.user.age||0
                 });
             },

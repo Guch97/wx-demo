@@ -14,10 +14,9 @@ Page({
         realName:'',
     },
     onButtonClick(){
-        console.log(this.data.token,'token')
-
+        var app = getApp();
         wx.request({
-            url: `https://38m89829d7.zicp.fun/ucenter/user/update/${this.data.userId}`,
+            url: `${app.globalData.baseApi}/ucenter/user/update/${this.data.userId}`,
             method: 'POST',
             data:{
                 realName:this.data.realName,

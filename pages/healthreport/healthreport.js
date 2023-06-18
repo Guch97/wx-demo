@@ -26,13 +26,14 @@ Page({
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow() {
+    onShow () {
+        var app = getApp();
         let that = this
         const token = wx.getStorageSync('token')
         const oldmanId = wx.getStorageSync('oldmanId')
 
         wx.request({
-            url: 'https://38m89829d7.zicp.fun/ucenter/oldman/situation',
+            url: app.globalData.baseApi+'/ucenter/oldman/situation',
             method: 'GET',
             data: {
                 oldmanId

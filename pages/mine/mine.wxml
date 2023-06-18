@@ -2,7 +2,7 @@
 <view class="container">
     <image class="backgroundImage" src="../../Resources/BackGround.png"></image>
     <view class="inputs" >
-        <view style="display: flex;align-items: center;justify-content: space-around; margin-top: 50px;">
+        <view style="display: flex;align-items: center;justify-content: space-around; margin-top: 50rpx;">
             <view>
                 <image src="../../Resources/icon.png" style="width: 240rpx;height: 240rpx;"></image>
             </view>
