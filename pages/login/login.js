@@ -1,12 +1,14 @@
 // pages/login/login.js
+// import {login} from '../../request/index'
+// const login =  require('../../request/index.js')
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        phoneNumberInput : '',
-        passwordInput:''
+        phoneNumberInput: '',
+        passwordInput: ''
     },
 
     /**
@@ -65,29 +67,62 @@ Page({
 
     },
 
-    onPhoneNumberInput:function(e){
+    onPhoneNumberInput: function (e) {
         this.setData({
-            phoneNumberInput:e.detail.value
+            phoneNumberInput: e.detail.value
         })
     },
 
-    onPasswordInput:function(e){
+    onPasswordInput: function (e) {
         this.setData({
-            passwordInput:e.detail.value
+            passwordInput: e.detail.value
         })
     },
 
-    onConfirm:function() {
+    onConfirm: function () {
         if (this.UserInfoVerify()) {
-            wx.navigateTo({
-                url:'../mainInfo/mainInfo'
+            wx.request({
+                url: 'https://38m89829d7.zicp.fun/login',
+                method: 'POST',
+                data: {
+                    realName:this.data.phoneNumberInput,
+                    nonceStr: 111,
+                    passWord: this.data.passwordInput,
+                    userName: this.data.phoneNumberInput
+                },
+                header: {
+                    'content-type': 'application/json'
+                },
+                success: function (res) {
+                    wx.showToast({
+                        icon:'none',
+                        title: res?.data.message,
+                        duration: 2000
+                    });
+                    if(res.data.code===200){
+                        wx.navigateTo({
+                            url: '../mainInfo/mainInfo'
+                        });
+                    }
+                },
+            });
+        } else {
+            wx.showToast({
+                title: '请输入信息',
+                icon: 'error',
+                duration: 2000
             });
         }
     },
 
     //用户手机号与密码验证主逻辑
-    UserInfoVerify(){
-        return true;
+    UserInfoVerify() {
+        console.log(this.data.phoneNumberInput, this.data.passwordInput, '2222')
+        if (this.data.phoneNumberInput && this.data.passwordInput) {
+            return true
+        } else {
+            return false
+        }
     }
 
 

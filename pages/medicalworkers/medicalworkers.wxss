@@ -16,6 +16,6 @@
 .container{
     width: 750rpx;
     height: 1450rpx;
-
+    padding-top:100rpx;
     z-index: 0;
 }

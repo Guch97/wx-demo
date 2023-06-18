@@ -2,28 +2,36 @@
 <view class="container">
     <image class="backgroundImage" src="../../Resources/BackGround.png"></image>
     <view class="inputs" >
-        <view style="display: flex; flex-direction: row;margin-top: 50px;">
+        <view style="display: flex;align-items: center;justify-content: space-around; margin-top: 50px;">
             <view>
-                <image src="../../Resources/icon.png" style="width: 120px;height: 120px;margin-left: 60px;"></image>
+                <image src="../../Resources/icon.png" style="width: 240rpx;height: 240rpx;"></image>
             </view>
-            <view style="display: flex;flex-direction: column;margin-top: 10px;">
-                <view style="margin-left: 20px;">
-                <text style="font-size: 25px;">姓名：</text>
-                <text style="font-size: 25px;">张三</text>
+            <view class="flex_sa" style="display: flex;flex-direction: column;margin-top: 10px;align-items: center;justify-content: space-around;">
+                <view class="flex_sa">
+                    <text style="font-size: 25px;">姓名：</text>
+                    <text style="font-size: 25px;">{{name}}</text>
                 </view>
-                <view style="margin-left: 20px;margin-top: 30px;">
-                <text style="font-size: 25px;">年龄：</text>
-                <text style="font-size: 25px;">28</text>
+                <view class="flex_sa" style="width: 100%;">
+                    <text style="font-size: 25px;">年龄：</text>
+                    <text style="font-size: 25px;">{{age}}</text>
                 </view>
             </view>
         </view>
-        <view style="margin-left: 50px;margin-top: 80px;display: flex;flex-direction: row;">
-            <text style="font-size: 25px;">预警记录:</text>
-            <text style="font-size: 18px;height: 28px;line-height: 28px;margin-left: 5px;margin-top: 5px;">2023/06/06 17：08</text>
+        <view style="margin-top: 60px;display: flex;flex-direction: row;" class="flex_sa">
+            <text style="font-size: 50rpx">预警记录:</text>
+            <block wx:for="{{alertTime}}" wx:key="index">
+                <view>当前项的索引为 {{index}}</view>
+                <view>当前项的值为 {{item}}</view>
+            </block>
+            <!-- <text style="font-size: 18px;height: 28px;line-height: 28px;margin-left: 5px;margin-top: 5px;">{{alertTime||'-'}}</text> -->
         </view>
-        <view style="margin-left: 50px;margin-top: 60px;display: flex;flex-direction: row;">
-            <text style="font-size: 25px;">呼叫记录:</text>
-            <text style="font-size: 18px;height: 28px;line-height: 28px;margin-left: 5px;margin-top: 5px;">2023/06/06 17：08</text>
+        <view style="margin-top: 60px;display: flex;flex-direction: row;" class="flex_sa">
+            <text style="font-size: 50rpx;">呼叫记录:</text>
+            <block wx:for="{{callTime}}" wx:key="index">
+                <view>当前项的索引为 {{index}}</view>
+                <view>当前项的值为 {{item}}</view>
+            </block>
+            <!-- <text style="font-size: 18px;height: 28px;line-height: 28px;margin-left: 5px;margin-top: 5px;">{{callTime||'-'}}</text> -->
         </view>
     </view>
 </view>

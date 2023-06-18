@@ -3,6 +3,6 @@
     <image class="backgroundImage" src="../../Resources/BackGround.png"></image>
     <view class="inputs" style="display: flex;flex-direction: column;">
         <text style="font-size: 35px;text-align: center;">当前血压值</text>
-        <text style="font-size: 55px;text-align: center;margin-top: 100px;color: green;">100</text>
+        <text style="font-size: 55px;text-align: center;margin-top: 100px;color: green;">{{value}}</text>
     </view>
 </view>

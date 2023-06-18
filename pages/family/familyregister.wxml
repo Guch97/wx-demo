@@ -2,13 +2,13 @@
 <!--pages/familyormedicalworkers/familyormedicalworks.wxml-->
 <view class="container">
     <image class="backgroundImage" src="../../Resources/BackGround.png"></image>
-    <view class="inputs" style="margin-top: 50px;">
+    <view class="inputs" style="margin-top: 20rpx;">
         <view style="display: flex; flex-direction: row; height: 100rpx; padding: 10px; margin: 10px; width: 712rpx; box-sizing: border-box">
             <view style="background-color: #F1F1F1; width: 210rpx; height: 62rpx; display: block; box-sizing: border-box">
                 <text style="position: relative; line-height: 60rpx; left: 18rpx; top: 0rpx;font-size: 15px;">本人姓名</text>
             </view>
             <view style="background-color: #E6E6E6; width: 500rpx; height: 62rpx; display: block; box-sizing: border-box">
-                <input style="position: relative; width: 380rpx; height: 60rpx; display: block; box-sizing: border-box; left: 31rpx; top: 0rpx" class="phoneNumberInput" maxlength="11" bindinput="onPhoneNumberInput" placeholder="  Name" />
+                <input  model:value="{{realName}}" style="position: relative; width: 380rpx; height: 60rpx; display: block; box-sizing: border-box; left: 31rpx; top: 0rpx" class="phoneNumberInput" maxlength="11"  placeholder="  Name" />
             </view>
     
         </view>
@@ -17,7 +17,7 @@
                 <text style="position: relative; line-height: 60rpx; left: 18rpx; top: 0rpx;font-size: 15px;">本人身份证</text>
             </view>
             <view style="background-color: #E6E6E6; width: 500rpx; height: 62rpx; display: block; box-sizing: border-box">
-                <input style="position: relative; width: 430rpx; height: 60rpx; display: block; box-sizing: border-box; left: 31rpx; top: 0rpx" class="phoneNumberInput" bindinput="onPasswordInput" placeholder="  Identity Card" />
+                <input model:value="{{idNo}}" style="position: relative; width: 430rpx; height: 60rpx; display: block; box-sizing: border-box; left: 31rpx; top: 0rpx" class="phoneNumberInput"  placeholder="  Identity Card" />
             </view>
     
         </view>
@@ -27,7 +27,7 @@
                 <text style="position: relative; line-height: 60rpx; left: 18rpx; top: 0rpx;font-size: 15px;">老人姓名</text>
             </view>
             <view style="background-color: #E6E6E6; width: 480rpx; height: 62rpx; display: block; box-sizing: border-box">
-                <input style="position: relative; width: 400rpx; height: 60rpx; display: block; box-sizing: border-box; left: 31rpx; top: 0rpx" class="phoneNumberInput" bindinput="onPasswordInput" placeholder="  Older Name" />
+                <input model:value="{{name}}"  style="position: relative; width: 400rpx; height: 60rpx; display: block; box-sizing: border-box; left: 31rpx; top: 0rpx" class="phoneNumberInput"  placeholder="  Older Name" />
             </view>
     
         </view>
@@ -37,7 +37,7 @@
                 <text style="position: relative; line-height: 60rpx; left: 18rpx; top: 0rpx;font-size: 15px;">老人身份证</text>
             </view>
             <view style="background-color: #E6E6E6; width: 480rpx; height: 62rpx; display: block; box-sizing: border-box">
-                <input style="position: relative; width: 400rpx; height: 60rpx; display: block; box-sizing: border-box; left: 31rpx; top: 0rpx" class="phoneNumberInput" bindinput="onPasswordInput" placeholder="  Older Identity Card" />
+                <input model:value="{{idCard}}" style="position: relative; width: 400rpx; height: 60rpx; display: block; box-sizing: border-box; left: 31rpx; top: 0rpx" class="phoneNumberInput"  placeholder="  Older Identity Card" />
             </view>
     
         </view>
@@ -47,7 +47,7 @@
                 <text style="position: relative; line-height: 60rpx; left: 18rpx; top: 0rpx;font-size: 15px;">老人年龄</text>
             </view>
             <view style="background-color: #E6E6E6; width: 480rpx; height: 62rpx; display: block; box-sizing: border-box">
-                <input style="position: relative; width: 400rpx; height: 60rpx; display: block; box-sizing: border-box; left: 31rpx; top: 0rpx" class="phoneNumberInput" bindinput="onPasswordInput" placeholder="  Older Age" />
+                <input  model:value="{{age}}"  style="position: relative; width: 400rpx; height: 60rpx; display: block; box-sizing: border-box; left: 31rpx; top: 0rpx" class="phoneNumberInput"  placeholder="  Older Age" />
             </view>
     
         </view>
@@ -57,11 +57,11 @@
                 <text style="position: relative; line-height: 60rpx; left: 18rpx; top: 0rpx;font-size: 15px;">老人病史</text>
             </view>
             <view style="background-color: #E6E6E6; width: 480rpx; height: 62rpx; display: block; box-sizing: border-box">
-                <input style="position: relative; width: 400rpx; height: 60rpx; display: block; box-sizing: border-box; left: 31rpx; top: 0rpx" class="phoneNumberInput" bindinput="onPasswordInput" placeholder="  Geriatric History" />
+                <input model:value="{{medical_history}}" style="position: relative; width: 400rpx; height: 60rpx; display: block; box-sizing: border-box; left: 31rpx; top: 0rpx" class="phoneNumberInput"  placeholder="  Geriatric History" />
             </view>
     
         </view>
-        <navigator open-type="navigate" url="../login/login" style="background-color: #F1F1F1;width: 150px;text-align: center;margin-left: 140px;margin-top: 60px;height: 35px;line-height: 35px;font-size: 20px;background-color: ghostwhite;">确定</navigator>
+        <button bindtap="onButtonClick"  open-type="navigate"  style="background-color: #F1F1F1;width: 150px;text-align: center;margin-top: 60px;font-size: 20px;background-color: ghostwhite;">确定</button>
     </view>
 
     

@@ -5,7 +5,10 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        name:'-',
+        age:0,
+        alertTime:[],
+        callTime:[]
     },
 
     /**
@@ -21,14 +24,67 @@ Page({
     onReady() {
 
     },
+    callHistory(){
+        let that = this
+        wx.request({
+            url: 'https://38m89829d7.zicp.fun/ucenter/oldman/callHistory',
+            method: 'GET',
+            data: {
+                oldmanId:'1'
+            },
+            header: {
+                'content-type': 'application/json'
+            },
+            success: function (res) {
+                that.setData({
+                    callTime:[]
+                });
+            },
+        });
+    },
+    warningHistory(){
+        let that = this
+        wx.request({
+            url: 'https://38m89829d7.zicp.fun/ucenter/oldman/warningHistory',
+            method: 'GET',
+            data: {
+                oldmanId:'1'
+            },
+            header: {
+                'content-type': 'application/json'
+            },
+            success: function (res) {
+                that.setData({
+                    alertTime:[]
+                });
+            },
+        });
+    },
 
     /**
      * 生命周期函数--监听页面显示
      */
     onShow() {
-
+        let that = this
+        wx.request({
+            url: 'https://38m89829d7.zicp.fun//ucenter/oldman/situation',
+            method: 'GET',
+            data: {
+                oldmanId:'1'
+            },
+            header: {
+                'content-type': 'application/json'
+            },
+            success: function (res) {
+                that.setData({
+                    value:0
+                });
+                console.log(res.data,'血压')
+            },
+        });
+        this.callHistory()
+        this.warningHistory()
     },
-
     /**
      * 生命周期函数--监听页面隐藏
      */

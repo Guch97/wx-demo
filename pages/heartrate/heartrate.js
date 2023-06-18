@@ -5,14 +5,14 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        value:0,
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-
+    
     },
 
     /**
@@ -26,7 +26,23 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
-
+        let that = this
+        wx.request({
+            url: 'https://38m89829d7.zicp.fun//ucenter/oldman/situation',
+            method: 'GET',
+            data: {
+                oldmanId:'1'
+            },
+            header: {
+                'content-type': 'application/json'
+            },
+            success: function (res) {
+                that.setData({
+                    value:res.data.heartRate
+                });
+                console.log(res.data,'血压')
+            },
+        });
     },
 
     /**

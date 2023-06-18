@@ -79,9 +79,25 @@ Page({
     },
     onButtonClick() {
         if (this.data.code === Number(this.data.passwordInput)) {
-            wx.navigateTo({
-                url: '/pages/familyormedicalworkers/familyormedicalworks'
-            })
+            wx.request({
+                url: 'https://38m89829d7.zicp.fun/ucenter/user/register',
+                method: 'POST',
+                data:{
+                    mobile:this.data.phoneNumberInput,
+                    passWord:this.data.passwordInput
+                },
+                success: function(res) {
+                    wx.showToast({
+                        icon:'none',
+                        title: res.data.message||'操作成功',
+                        duration: 1000
+                    });
+                    wx.navigateTo({
+                        url: '/pages/familyormedicalworkers/familyormedicalworks?id=1'
+                    })
+                  console.log(res.data);
+                },
+              });
         } else {
             wx.showToast({
                 title: '验证码错误',
